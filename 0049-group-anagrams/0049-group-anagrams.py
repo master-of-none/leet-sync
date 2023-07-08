@@ -6,7 +6,7 @@ class Solution:
             count = [0] * 26
 
             for c in s:
-                count[ord(c) - ord('a')] += 1
+                count[ord(c) - ord("a")] += 1
             
             result[tuple(count)].append(s)
         
