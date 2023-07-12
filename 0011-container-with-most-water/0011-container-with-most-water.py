@@ -5,12 +5,13 @@ class Solution:
         res = 0
 
         while l < r:
-            area = (r - l) * min(height[r], height[l])
-            res = max(area, res)
+            area = (r - l) * min(height[l], height[r])
+            res = max(res, area)
 
             if height[l] < height[r]:
-                l+=1
-            else:
-                r -= 1 
+                l += 1
             
+            else:
+                r -= 1
+        
         return res
