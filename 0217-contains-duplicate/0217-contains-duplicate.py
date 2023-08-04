@@ -8,4 +8,3 @@ class Solution:
             hashset.add(c)
         
         return False
-        
