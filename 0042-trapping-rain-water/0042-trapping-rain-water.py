@@ -1,24 +1,42 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
+        # l = 0
+        # r = len(height) - 1
+
+        # leftmax = height[l]
+        # rightmax = height[r]
+
+        # res = 0
+
+        # while l < r:
+        #     if leftmax < rightmax:
+        #         l+=1
+        #         leftmax = max(leftmax,height[l])
+        #         res += leftmax - height[l]
+                
+            
+        #     else:
+        #         r -= 1
+        #         rightmax = max(rightmax, height[r])
+        #         res += rightmax - height[r]
+                
+        
+        # return res
+
         l = 0
-        r = len(height) - 1
-
-        leftmax = height[l]
-        rightmax = height[r]
-
+        r = len(height)-1
+        leftMax = height[l]
+        rightMax = height[r]
         res = 0
 
         while l < r:
-            if leftmax < rightmax:
+            if leftMax < rightMax:
                 l+=1
-                leftmax = max(leftmax,height[l])
-                res += leftmax - height[l]
-                
-            
+                leftMax = max(leftMax, height[l])
+                res += leftMax - height[l]
             else:
-                r -= 1
-                rightmax = max(rightmax, height[r])
-                res += rightmax - height[r]
-                
+                r-=1
+                rightMax = max(rightMax, height[r])
+                res += rightMax - height[r]
         
         return res
