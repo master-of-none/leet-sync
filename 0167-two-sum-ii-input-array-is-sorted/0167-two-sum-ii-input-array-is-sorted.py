@@ -7,9 +7,9 @@ class Solution:
             temp = numbers[l] + numbers[r]
 
             if temp < target:
-                l += 1
+                l+=1
             elif temp > target:
-                r -= 1
+                r-=1
             else:
                 return [l+1, r+1]
         
