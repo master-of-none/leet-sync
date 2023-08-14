@@ -10,19 +10,18 @@ class Solution:
 
         q = collections.deque()
         q.append(root)
-
+        
         while q:
-            rightSide = None
+            temp = None
             for i in range(len(q)):
                 node = q.popleft()
 
                 if node:
-                    rightSide = node
+                    temp = node
                     q.append(node.left)
                     q.append(node.right)
-            
-            if rightSide:
-                res.append(rightSide.val)
+                
+            if temp:
+                res.append(temp.val)
         
         return res
-                    
