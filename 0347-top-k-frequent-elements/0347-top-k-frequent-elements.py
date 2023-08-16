@@ -4,14 +4,14 @@ class Solution:
         freq = [[] for i in range(len(nums)+1)]
 
         for i in nums:
-            hashmap[i] = 1 + hashmap.get(i, 0)
+          hashmap[i] = 1 + hashmap.get(i,0)
         
         for n,c in hashmap.items():
-            freq[c].append(n)
+          freq[c].append(n)
         
         res = []
-        for i in range(len(freq)-1, 0, -1):
-            for n in freq[i]:
-                res.append(n)
-                if len(res) == k:
-                    return res
+        for n in range(len(freq)-1, -1, -1):
+          for c in freq[n]:
+            res.append(c)
+            if len(res) == k:
+              return res
