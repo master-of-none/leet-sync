@@ -3,12 +3,13 @@ class Solution:
         hashset = set(nums)
         res = 0
 
-        for c in nums:
-            if c-1 not in hashset:
-                length=0
-                while c+length in hashset:
+        for n in nums:
+            if n-1 not in hashset:
+                length = 0
+                while n+length in hashset:
                     length += 1
                 
                 res = max(res, length)
-            
+        
         return res
+
