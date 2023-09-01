@@ -3,8 +3,8 @@ use std::collections::HashMap;
 impl Solution {
     pub fn find_anagrams(s: String, p: String) -> Vec<i32> {
         let mut start_index = 0;
-        let mut p_map: HashMap<char, i32> = HashMap::new();
         let mut s_map: HashMap<char, i32> = HashMap::new();
+        let mut p_map: HashMap<char, i32> = HashMap::new();
         let mut res: Vec<i32> = Vec::new();
         
         for char in p.chars() {
@@ -22,7 +22,6 @@ impl Solution {
                     res.push(start_index as i32);
                 }
                 
-                // If current character is in s_map, remove it and re-update the map.
                 if s_map.contains_key(&s_chars[start_index]) {
                     let entry = s_map.entry(s_chars[start_index]).or_insert(0);
                     *entry -= 1;
