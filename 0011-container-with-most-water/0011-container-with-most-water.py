@@ -6,11 +6,15 @@ class Solution:
 
         while l < r:
             area = (r-l) * min(height[l], height[r])
-            res = max(res, area)
+            res = max(area, res)
 
             if height[l] < height[r]:
-                l+=1
+                l += 1
+            
             else:
-                r-=1
+                r -= 1
         
         return res
+            
+
+        
