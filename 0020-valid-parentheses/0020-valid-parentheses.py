@@ -1,11 +1,11 @@
 class Solution:
     def isValid(self, s: str) -> bool:
+        hash_map = {"}":"{", ")":"(", "]":"["}
         stack = []
-        hashmap = {")": "(", "}":"{", "]":"["}
-        
+
         for c in s:
-            if c in hashmap:
-                if stack and stack[-1] == hashmap[c]:
+            if c in hash_map:
+                if stack and stack[-1] == hash_map[c]:
                     stack.pop()
                 
                 else:
@@ -13,5 +13,5 @@ class Solution:
             
             else:
                 stack.append(c)
-            
+        
         return True if not stack else False
