@@ -5,9 +5,9 @@ class Solution:
         for s in strs:
             count = [0] * 26
 
-            for i in s:
-                count[ord(i) - ord("a")] += 1
-
+            for c in s:
+                count[ord(c) - ord("a")] += 1
+            
             res[tuple(count)].append(s)
         
         return res.values()
