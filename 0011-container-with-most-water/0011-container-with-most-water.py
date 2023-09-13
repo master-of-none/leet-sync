@@ -5,7 +5,7 @@ class Solution:
         res = 0
 
         while l < r:
-            area = (r-l) * min(height[l], height[r])
+            area = (r - l) * min(height[l], height[r])
             res = max(area, res)
 
             if height[l] < height[r]:
@@ -15,6 +15,4 @@ class Solution:
                 r -= 1
         
         return res
-            
-
         
