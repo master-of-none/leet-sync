@@ -24,5 +24,5 @@ class Solution:
         
         else:
             cur.next = list2
-
+        
         return dummy.next
