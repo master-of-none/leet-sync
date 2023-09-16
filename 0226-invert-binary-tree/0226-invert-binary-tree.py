@@ -18,6 +18,3 @@ class Solution:
 
         return root
         
-
-
-        
