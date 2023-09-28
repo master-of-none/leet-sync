@@ -18,16 +18,13 @@ class Solution:
                 
                 elif temp > 0:
                     r -= 1
-                
+
                 else:
-                    res.append([nums[i], nums[l],nums[r]])
+                    res.append([nums[i], nums[l], nums[r]])
                     l += 1
                     r -= 1
 
                     while l < r and nums[l] == nums[l-1]:
                         l += 1
-        
+            
         return res
-
-
-        
