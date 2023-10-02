@@ -3,11 +3,12 @@ class Solution:
         alice = 0
         bob = 0
 
-        for i in range(1, len(colors) - 1):
-            if colors[i-1] == colors[i] == colors[i+1]:
+        for i in range(len(colors) - 2):
+            if colors[i] == colors[i+1] == colors[i+2]:
                 if colors[i] == "A":
-                    alice += 1
+                   alice += 1
+                
                 else:
                     bob += 1
-            
-        return alice - bob >= 1
+        
+        return alice > bob
