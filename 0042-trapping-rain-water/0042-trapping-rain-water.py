@@ -5,6 +5,7 @@ class Solution:
         leftMax = height[l]
         rightMax = height[r]
         res = 0
+
         while l < r:
             if leftMax < rightMax:
                 l += 1
