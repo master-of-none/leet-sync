@@ -1,25 +1,32 @@
 class Solution:
-    def canFinish(self, numCourses, prerequisites):
-        indegree = [0] * numCourses
-        adj = [[] for _ in range(numCourses)]
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        premap = {i: [] for i in range(numCourses)}
 
-        for prerequisite in prerequisites:
-            adj[prerequisite[1]].append(prerequisite[0])
-            indegree[prerequisite[0]] += 1
+        for crs, pre in prerequisites:
+            premap[crs].append(pre)
+        
+        visit = set()
 
-        queue = deque()
-        for i in range(numCourses):
-            if indegree[i] == 0:
-                queue.append(i)
+        def dfs(crs):
+            if crs in visit:
+                return False
+            
+            if premap[crs] == []:
+                return True
+            
+            visit.add(crs)
 
-        nodesVisited = 0
-        while queue:
-            node = queue.popleft()
-            nodesVisited += 1
-
-            for neighbor in adj[node]:
-                indegree[neighbor] -= 1
-                if indegree[neighbor] == 0:
-                    queue.append(neighbor)
-
-        return nodesVisited == numCourses
+            for pre in premap[crs]:
+                if not dfs(pre):
+                    return False
+                
+            visit.remove(crs)
+            premap[crs] = []
+        
+            return True
+        
+        for crs in range(numCourses):
+            if not dfs(crs):
+                return False
+            
+        return True
