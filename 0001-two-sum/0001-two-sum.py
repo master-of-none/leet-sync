@@ -9,4 +9,6 @@ class Solution:
                 return [hashmap[diff], i]
             
             hashmap[n] = i
+
+        
         
