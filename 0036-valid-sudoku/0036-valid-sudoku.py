@@ -5,7 +5,7 @@ class Solution:
         squares = collections.defaultdict(set)
         
         val = board[1:]
-
+        print(val)
         for r in range(9):
             for c in range(9):
                 if board[r][c] == ".":
