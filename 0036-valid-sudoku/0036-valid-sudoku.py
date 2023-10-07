@@ -3,6 +3,8 @@ class Solution:
         row = collections.defaultdict(set)
         cols = collections.defaultdict(set)
         squares = collections.defaultdict(set)
+        
+        val = board[1:]
 
         for r in range(9):
             for c in range(9):
